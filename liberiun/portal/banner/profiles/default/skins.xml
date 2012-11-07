@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<object name="portal_skins"
+        meta_type="Plone Skins Tool"
+        allow_any="False"
+        cookie_persistence="False"
+        request_varname="plone_skin">
+
+ <object name="liberiunbanner_styles"
+         meta_type="Filesystem Directory View"
+         directory="liberiun.portal.banner:skins/liberiunbanner_styles"/>
+ <object name="liberiunbanner_templates"
+         meta_type="Filesystem Directory View"
+         directory="liberiun.portal.banner:skins/liberiunbanner_templates"/>
+         
+ <object name="xml"
+         meta_type="Filesystem Directory View"
+         directory="liberiun.portal.banner:skins/liberiunbanner_templates/xml"/>
+                  
+ <object name="liberiunbanner_images"
+         meta_type="Filesystem Directory View"
+         directory="liberiun.portal.banner:skins/liberiunbanner_images"/>
+ 
+ <skin-path name="Sunburst Theme">
+  <layer insert-after="custom" 
+         name="liberiunbanner_styles"/>
+  <layer insert-after="custom" 
+         name="liberiunbanner_templates"/>
+         
+  <layer insert-after="liberiunbanner_templates" 
+         name="xml"/>
+         
+                  
+  <layer insert-after="custom" 
+         name="liberiunbanner_images"/>
+ </skin-path>
+
+</object>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<import-steps>
+
+ 
+ <import-step 
+    id="LiberiunBanner-Update-RoleMappings" 
+    handler="liberiun.portal.banner.setuphandlers.updateRoleMappings"
+    title="Update Workflow role mappings for LiberiunBanner"
+    version="2008-07-25T10:47:25.987703">
+   <dependency step="LiberiunBanner-QI-dependencies"/>
+   updates the workflow role mappings for LiberiunBanner
+ </import-step>
+
+ <import-step 
+    id="LiberiunBanner-postInstall" 
+    handler="liberiun.portal.banner.setuphandlers.postInstall"
+    title="manual coded post-install for LiberiunBanner"
+    version="2008-07-25T10:47:25.987703">
+   <dependency step="LiberiunBanner-QI-dependencies"/>
+   manual coded post-install for LiberiunBanner
+ </import-step>
+
+<!-- ##code-section ADDITIONALSTEPS -->
+<!-- ##/code-section ADDITIONALSTEPS --> 
+
+</import-steps>
+ 

@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+<head>
+  <title tal:content="template/title">The title</title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+</head>
+
+<body metal:fill-slot="main">
+
+    <div tal:define="banners python:context.portal_catalog(portal_type='Banner')"> 
+      <div tal:repeat="link banners">
+        <tal:banner tal:condition="python:link.portal_type == 'Banner'">            
+            <a tal:define="dados python:context.link_banner(link)"
+               tal:attributes="href   python: dados['link'];
+                               alt    link/Description|link/Title;
+                               title  link/Description|link/Title;
+                               target python:dados['target']"
+               tal:content="link/Title">
+                Link
+            </a>                    
+        </tal:banner>    
+      </div>
+    </div>
+
+</body>
+</html>

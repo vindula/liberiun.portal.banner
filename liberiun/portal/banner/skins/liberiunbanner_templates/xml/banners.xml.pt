@@ -1,0 +1,20 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n" tal:omit-tag="">
+
+  <?xml version="1.0" encoding="utf-8"?>  
+  <banners tal:define="items context/@@banner/get_flash_banners">
+    <tal:repeat tal:repeat="item items">
+      <tal:define tal:define="link   python: item.getURL()+'/arquivo_flash.swf';
+                              titulo python: item.Title;
+                              tempo  python: item.getTempo;
+                              url    python: item.getLink_flash">
+                       
+        <banner tal:attributes="src    link;
+                                tempo  tempo;
+                                titulo titulo;
+                                url    url"/>
+      </tal:define>            
+    </tal:repeat>
+  </banners>
+</html>

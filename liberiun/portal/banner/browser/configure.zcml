@@ -1,0 +1,19 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:browser="http://namespaces.zope.org/browser"    
+    i18n_domain="liberiun.portal.banner">
+
+	<!--  View Banner -->
+    <browser:page
+        for="*"
+        name="banner"
+        class=".views.Banner"
+        permission="zope.Public"
+        allowed_attributes="get_flash_banners"
+        />
+
+
+</configure>

@@ -1,0 +1,22 @@
+ <tal:block metal:define-macro="portlet">
+    <div align="center" tal:define="caminho python:context.portal_url.getPortalPath()+'/banners';
+                                    lista python:context.portal_catalog(portal_type='Banner',
+                                                                        review_state='published',
+                                                                        path=caminho,
+                                                                        sort_on='getObjPositionInParent')"
+                        tal:condition="lista"
+                        tal:repeat="item lista">
+        <a href="#" alt="#" title="#"
+        tal:define="dados python:context.retornaLinkCerto(item)"
+        tal:attributes="href   python: dados[1];
+                        alt    item/Title;
+                        title  item/Title;
+                        target python:context.verificaTarget(item)" >
+            <img border="0" class="banners"  src="#"
+                tal:attributes="src string:${item/getURL}/imagem_banner_thumb;
+                                alt item/Title;
+                                title item/Title"/>
+        </a>
+        <br /><br />
+    </div>
+</tal:block>

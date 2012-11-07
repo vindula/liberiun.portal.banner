@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<portlets>
+
+ <!-- Portlet type registrations -->
+
+ <portlet
+   addview="portlet.banner"
+   title="Portlet Banner"
+   description=""
+   />
+
+</portlets>

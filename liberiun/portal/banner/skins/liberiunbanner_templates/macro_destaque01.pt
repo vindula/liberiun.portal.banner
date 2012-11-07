@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+
+<div metal:fill-slot="main">
+	
+<tal:block metal:define-macro="slide_news">
+	<div id="boxDestaque02">
+        <script type="text/javascript" 
+                src="jquery.js"></script> 
+
+        <script type="text/javascript"
+                src="jquery.cycle.js"></script> 
+
+        <script type="text/javascript">
+        $(function() {
+        $('#pai').show(); //exibe a div pai
+        $('#pai').cycle({
+                        fx:     'fade',
+                        timeout: 6000,
+                        speed: 500,
+                        next:   '.next',
+                        prev:   '.previous',
+                        pager: '.numbers'
+                        });
+        });
+
+        </script>
+          <div id="nav"> 
+
+              <span><a class="previous" href="#"><img src="btleft.gif" /></a></span> 
+
+              <span class="numbers"></span> 
+
+              <span><a class="next" href="#"><img src="btrigth.gif" /></a></span> 
+
+          </div> 
+
+
+          <div id="pai" tal:define="lista context/listaBoxHome"> 
+
+              <div class="filho" tal:repeat="item lista">
+                <img src="img_destaque_randomico.jpg" width="135" height="111" alt="Img Destaque Randomico"
+					tal:attributes="src string:${item/getURL}/imagem_banner_thumb">
+                <div class="destaqueRandomico">
+                <h1 tal:content="item/Title">Titulo 01</h1>
+                <p tal:content="item/Description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p></div>
+                </div>
+
+         </div>  
+
+    
+    </tal:block>
+</div>
+
+</body>
+</html>
+

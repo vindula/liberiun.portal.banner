@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+
+<!-- Verifica se tem imagem no banner pelo catalog
+  <index name="TemImagemNoBanner" meta_type="FieldIndex">
+    <indexed_attr value="TemImagemNoBanner"/>
+  </index>
+-->
+  <index name="getBanner_link_interno" meta_type="FieldIndex">
+    <indexed_attr value="getLink_interno"/>
+  </index>
+  <index name="getLinkTarget" meta_type="FieldIndex">
+      <indexed_attr value="getLinkTarget"/>
+  </index>
+
+  <index name="link_target" meta_type="FieldIndex">
+      <indexed_attr value="getTarget"/>
+  </index>
+  <index name="banner_link" meta_type="FieldIndex">
+      <indexed_attr value="getLink"/>
+  </index>  
+
+
+<!-- Banner Flash -->
+
+  <index name="getTempo" meta_type="FieldIndex">
+      <indexed_attr value="getTempo"/>
+  </index>
+
+  <index name="getLink_flash" meta_type="FieldIndex">
+      <indexed_attr value="getLink_flash"/>
+  </index>
+    
+<!-- <index name="getAltura" meta_type="FieldIndex">
+      <indexed_attr value="getAltura"/>
+  </index>  
+  <index name="getLargura" meta_type="FieldIndex">
+      <indexed_attr value="getLargura"/>
+  </index>-->
+        
+<!-- Verifica se tem imagem no banner pelo catalog
+  <column value="TemImagemNoBanner"/>-->
+  
+  <column value="getBanner_link_interno"/>
+  <column value="getLinkTarget"/> 
+  
+  <column value="link_target"/>  
+  <column value="banner_link"/>   
+
+  <column value="getTempo"/>  
+  
+  <!--<column value="getAltura"/> 
+  <column value="getLargura"/>-->
+
+  <column value="getLink_flash"/>        
+</object>
