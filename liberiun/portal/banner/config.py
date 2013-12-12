@@ -1,44 +1,31 @@
 # -*- coding: utf-8 -*-
-#
-# File: liberiun.portal.banner.py
-#
-# Copyright (c) 2008 by []
-# Generator: ArchGenXML Version 2.1
-#            http://plone.org/products/archgenxml
-#
-# GNU General Public License (GPL)
-#
-
-__author__ = """unknown <unknown>"""
-__docformat__ = 'plaintext'
+try: # New CMF
+    from Products.CMFCore.permissions import setDefaultRoles 
+except ImportError: # Old CMF
+    from Products.CMFCore.CMFCorePermissions import setDefaultRoles
 
 
-# Product configuration.
-#
-# The contents of this module will be imported into __init__.py, the
-# workflow configuration and every content type module.
-#
-# If you wish to perform custom configuration, you may put a file
-# AppConfig.py in your product's root directory. The items in there
-# will be included (by importing) in this file if found.
+PROJECTNAME = 'liberiun.portal.banner'
 
-from Products.CMFCore.permissions import setDefaultRoles
-##code-section config-head #fill in your manual code here
-##/code-section config-head
+try:
+    from Products.CMFPlone.migrations import v2_1
+except ImportError:
+    HAS_PLONE21 = False
+else:
+    HAS_PLONE21 = True
 
-
-PROJECTNAME = "liberiun.portal.banner"
 
 # Permissions
 DEFAULT_ADD_CONTENT_PERMISSION = "Add portal content"
 setDefaultRoles(DEFAULT_ADD_CONTENT_PERMISSION, ('Manager', 'Owner'))
-ADD_CONTENT_PERMISSIONS = {
-    'Banner': 'liberiun.portal.banner: Add Banner',
-}
+#ADD_CONTENT_PERMISSIONS = {
+#    'VindulaNews': 'vindula.content: Add VindulaNews',
+#    'OrganizationalStructure': 'vindula.content: Add OrganizationalStructure',
+#    'Unit': 'vindula.content: Add Unit',}
 
-setDefaultRoles('liberiun.portal.banner: Add Banner', ('Manager','Owner'))
 
 product_globals = globals()
+
 
 # Dependencies of Products to be installed by quick-installer
 # override in custom configuration
