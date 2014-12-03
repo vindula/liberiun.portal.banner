@@ -5,7 +5,7 @@
    
  <property name="title">Banner</property>
  <property name="description"></property>
- <property name="content_icon">Original_Banner.gif</property>
+ <property name="content_icon">/portal_skins/liberiunbanner_images/Original_Banner.gif</property>
  <property name="content_meta_type">Banner</property>
  <property name="product">liberiun.portal.banner</property>
  <property name="factory">addBanner</property>
